@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*
+- Utilizar selectores para id, class y etiquetas
+- Aplicar colores de fondo, bordes personalizados y sombras
+- Utilizar el modelo de caja y propiedades como margin, border y padding
+- Jugar con display y positon para organizar la dispocision de mi pagina
+- Añadir transformaciones y aplicar pseudoclases 
+- Implementar animaciones con @keyframe
+*/
+/*Reset CSSS*/
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/*Variables de colores*/
+:root {
+  --color-negro: black;
+}
+
+body { /*Elemento seleccionado con etiqueta*/
+  margin: 30px;
+  background-color: #e16262;
+}
+
+/*HEADER*/
+header { 
+  margin:10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+header h1 {
+  text-shadow: 0 4px gray; /*Sombras al texto*/
+}
+
+.navbar {
+  position: absolute; /*Organizar la dispocision de elementos*/
+  right: 0;
+  margin-right: 50px;
+}
+
+.navbar ul {
+  display: flex; /*Organizar la disposicion de elementos*/
+  list-style-type: none;
+  
+}
+
+.navbar ul li {/*Especificidad*/
+  /*Modelo de caja*/
+  border: 3px solid var(--color-negro);
+  padding: 5px;
+  margin:5px;
+
+  border-radius: 8px;
+  background-color: blanchedalmond;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--color-negro)
+}
+
+/*LINEA SEPARADORA*/
+hr {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.historia {
+  margin: 20px;
+}
+
+.historia h2 {
+  margin: 10px;
+}
+
+/*INSTRUMENTO*/
+
+.container_guitar {
+  display: flex;
+  justify-content: center;
+  padding:50px;
+  margin:15px;
+}
+
+.img_guitar {
+  border-radius: 2px;
+  width: 400px;
+  box-shadow: 5px 1px 5px red;
+  /*ANIMACIONES*/
+  animation: mover;
+ 
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+/*ANIMACIONES*/
+@keyframes mover {
+  0% {
+    transform: rotate(20deg);
+  }
+   25% {
+    transform: rotate(-20deg)
+   }
+
+   50% {
+    transform:rotate(20deg);
+   }
+
+   75% {
+    transform: rotate(-20deg);
+   }
+
+   100% {
+    transform: rotate(20deg);
+   }
+}
+
+/*Transformaciones*/
+/*Conflicto entre clases??...*/
+
+.notas {
+  margin: 20px;
+}
+
+.notas h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.notas_interactivas {
+  margin:30px;
+  display: flex;
+  height: 100px;
+  margin-bottom: 50px;
+  justify-content: space-around;
+
+}
+
+.notas_interactivas ul {
+  list-style-type: none;
+  display: flex;
+  
+}
+
+.notas_img {
+  width: 50%;
+}
+
+.notas_img:hover {
+  width: 70%;
+  transition:1s;
+  box-shadow: 0px 0px 5px red;
+}
+
+.notas_img::before {
+  width: 50%;
+  transition:0.5s
+}
+
+
